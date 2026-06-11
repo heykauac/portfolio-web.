@@ -4,7 +4,6 @@ Site de portfólio desenvolvido com HTML, CSS e JavaScript para o 1º período d
 
 ## Tecnologias e Critérios Atendidos
 - Layout structured utilizando CSS Flexbox (Navegação) e CSS Grid (Container principal e cartões de Batalha/Combustível).
-- Estética "Gritty Urban + Lofi Cafe," misturando fundo escuro (asfalto) com realces em Marrom Café e Vermelho Graffiti Neon.
 - Semântica: Uso de tags como header, nav, main, section, article e footer.
 - Navegação: 3 páginas interligadas (index.html, projetos.html, estudos.html).
 - JavaScript: Funcionalidade de Dark/Light mode e Ano dinâmico no rodapé.
