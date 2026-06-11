@@ -1,0 +1,103 @@
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --header-bg: #1a1a1a;
+    --header-text: #00ffcc;
+    --link-hover: #00b38f;
+    --card-bg: rgba(0, 0, 0, 0.05);
+}
+
+.dark-theme {
+    --bg-color: #0d0d0d;
+    --text-color: #e0e0e0;
+    --header-bg: #000000;
+    --header-text: #00ffcc;
+    --link-hover: #00b38f;
+    --card-bg: rgba(255, 255, 255, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: 0.3s;
+}
+
+/* Flexbox no Cabeçalho */
+.menu {
+    background-color: var(--header-bg);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--header-text);
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover, .menu a.ativo {
+    color: var(--link-hover);
+}
+
+button#theme-toggle {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--header-text);
+    border: 1px solid var(--header-text);
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+button#theme-toggle:hover {
+    background-color: var(--header-text);
+    color: #000;
+}
+
+/* CSS Grid no Corpo */
+.container {
+    flex: 1;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--header-text);
+}
+
+.lista-links li { margin-bottom: 0.5rem; margin-left: 1.5rem; }
+.lista-links a { color: var(--link-hover); font-weight: bold; }
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    margin-top: auto;
+    border-top: 2px solid var(--header-text);
+}
