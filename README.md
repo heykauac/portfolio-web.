@@ -11,4 +11,4 @@ Site de portfólio desenvolvido com HTML, CSS e JavaScript para o 1º período d
 
 ## Como visualizar
 Você pode ver o site rodando ao vivo no GitHub Pages:
-https://heykauac.github.io/portfolio-web/
+https://heykauac.github.io/portfolio-web./
