@@ -1,88 +1,249 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kauã | Portfólio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kauã Cardoso — Cybersec & Pentest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="giant-logo">
-            <span class="first-name">KAUÃ</span> <span class="last-name">CARDOSO</span>
+
+  <header class="site-header">
+    <nav class="nav-container">
+      <span class="nav-logo">KC</span>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#estudos">Estudos</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">🌓</button>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-noise"></div>
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="tag-label">// IDENTIFICADO</span>
+      </div>
+      <h1 class="hero-name">Kauã<br>Cardoso</h1>
+      <div class="hero-descriptor">
+        <span class="blink-cursor">_</span>
+        <span id="typewriter"></span>
+      </div>
+      <p class="hero-bio">
+        Estudante de Tecnologia na <strong>CESAR School</strong>. Construindo a base para entender sistemas e vulnerabilidades por baixo dos panos. Red Team em formação.
+      </p>
+      <div class="hero-actions">
+        <a href="mailto:kcm2@cesar.school" class="btn-primary">kcm2@cesar.school</a>
+        <a href="https://linkedin.com/in/kauãcardoso" target="_blank" rel="noopener" class="btn-ghost">LinkedIn →</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="avatar-frame">
+        <img src="https://github.com/heykauac.png" alt="Kauã Cardoso" class="avatar-img">
+        <div class="avatar-glitch"></div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-value red">Python</span>
+          <span class="stat-label">Automação & Exploits</span>
         </div>
-        
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html" class="ativo">Home</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="estudos.html">Estudos</a></li>
-            </ul>
-            <button id="theme-toggle" title="Alternar Tema">🌓</button>
-        </nav>
-    </header>
+        <div class="stat-item">
+          <span class="stat-value gold">C / C++</span>
+          <span class="stat-label">Kernel & Memória</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value red">C#</span>
+          <span class="stat-label">Desenvolvimento</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value gold">Arduino</span>
+          <span class="stat-label">IoT & Embarcados</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <main class="container">
-        <section id="hero">
-            <div class="hero-content">
-                <img src="https://github.com/heykauac.png" alt="Kauã" id="hero-photo" class="neon-glow" />
-                <div class="hero-text">
-                    <h1>Saudações, eu sou o <span class="neon-red">Kauã</span>.</h1>
-                    <p class="typing-subtitle">Eu sou <span id="typing-sub-js" class="mono"></span></p>
-                    <p class="hero-intro">Estudante do 1º período de Tecnologia, focado em Cibersegurança. Construindo a base de desenvolvimento para entender sistemas e vulnerabilidades por baixo dos panos.</p>
-                    
-                    <div class="hero-icons mono">
-                        <a href="https://www.linkedin.com/in/kauãcardoso" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:kcm2@cesar.school" target="_blank" title="E-mail"><i class="fas fa-envelope"></i></a>
-                    </div>
+  <section class="section-divider">
+    <span>[ ARSENAL ]</span>
+  </section>
 
-                    <a href="#contatos" class="btn-neon">Meus Contatos</a>
-                </div>
+  <section class="arsenal">
+    <div class="arsenal-grid">
+      <div class="arsenal-card" data-lang="Python">
+        <div class="card-icon">🐍</div>
+        <h3>Python</h3>
+        <p>Automação, scripts de exploração, análise de tráfego e ferramentas de pentest.</p>
+        <div class="skill-bar"><div class="skill-fill" style="--pct: 78%"></div></div>
+      </div>
+      <div class="arsenal-card featured" data-lang="C/C++">
+        <div class="card-icon">⚙️</div>
+        <h3>C / C++</h3>
+        <p>Manipulação de memória, exploits de baixo nível, análise de kernel e binários.</p>
+        <div class="skill-bar"><div class="skill-fill" style="--pct: 65%"></div></div>
+      </div>
+      <div class="arsenal-card" data-lang="Web">
+        <div class="card-icon">🌐</div>
+        <h3>HTML/CSS/JS</h3>
+        <p>Web App Security — XSS, CSRF, injeções. Entender o front para atacar e defender.</p>
+        <div class="skill-bar"><div class="skill-fill" style="--pct: 72%"></div></div>
+      </div>
+      <div class="arsenal-card" data-lang="IoT">
+        <div class="card-icon">📡</div>
+        <h3>Arduino</h3>
+        <p>Sistemas embarcados, ataques físicos, IoT hacking e prototipagem de hardware.</p>
+        <div class="skill-bar"><div class="skill-fill" style="--pct: 55%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-divider">
+    <span>[ PROJETOS ]</span>
+  </section>
+
+  <section class="projects" id="projetos">
+    <div class="projects-header">
+      <h2 class="section-title">Projetos</h2>
+      <span class="section-sub">Código real. Resultados reais.</span>
+    </div>
+    <div class="projects-grid">
+      <article class="project-card large">
+        <div class="project-img-frame">
+          <img src="" alt="Preview do Projeto 1" class="project-img" data-placeholder="INSERIR IMAGEM">
+          <span class="img-hint">[ inserir imagem ]</span>
+        </div>
+        <div class="project-info">
+          <span class="project-tag">Python · Segurança</span>
+          <h3 class="project-title">Projeto em Destaque</h3>
+          <p class="project-desc">Adicione aqui a descrição do seu projeto principal — ferramenta, exploit, script ou automação que você desenvolveu.</p>
+          <div class="project-links">
+            <a href="#" class="btn-code">Ver Código</a>
+            <a href="#" class="btn-demo">Demo →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-img-frame small">
+          <img src="" alt="Preview do Projeto 2" class="project-img" data-placeholder="INSERIR IMAGEM">
+          <span class="img-hint">[ inserir imagem ]</span>
+        </div>
+        <div class="project-info">
+          <span class="project-tag">C / Kernel</span>
+          <h3 class="project-title">Projeto 02</h3>
+          <p class="project-desc">Descreva aqui o segundo projeto — análise de binário, módulo de kernel, exploit de memória, etc.</p>
+          <div class="project-links">
+            <a href="#" class="btn-code">Ver Código</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-img-frame small">
+          <img src="" alt="Preview do Projeto 3" class="project-img" data-placeholder="INSERIR IMAGEM">
+          <span class="img-hint">[ inserir imagem ]</span>
+        </div>
+        <div class="project-info">
+          <span class="project-tag">Arduino · IoT</span>
+          <h3 class="project-title">Projeto 03</h3>
+          <p class="project-desc">Descreva aqui o projeto de hardware — dispositivo, ataque físico, sensor, prototipagem.</p>
+          <div class="project-links">
+            <a href="#" class="btn-code">Ver Código</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-divider">
+    <span>[ ESTUDOS ]</span>
+  </section>
+
+  <section class="studies" id="estudos">
+    <div class="studies-header">
+      <h2 class="section-title">Estudos</h2>
+      <span class="section-sub">Trilha de aprendizado — em construção constante.</span>
+    </div>
+    <div class="studies-layout">
+      <div class="studies-track">
+        <div class="track-item active">
+          <div class="track-dot"></div>
+          <div class="track-content">
+            <span class="track-status">CURSANDO</span>
+            <h4>Tecnologia — CESAR School</h4>
+            <p>1º Período. Fundamentos de computação, lógica, redes e arquitetura de sistemas.</p>
+          </div>
+        </div>
+        <div class="track-item">
+          <div class="track-dot"></div>
+          <div class="track-content">
+            <span class="track-status">ESTUDANDO</span>
+            <h4>Fundamentos de Cibersegurança</h4>
+            <p>OWASP Top 10, CVEs, análise de vulnerabilidades, redes e protocolos.</p>
+          </div>
+        </div>
+        <div class="track-item">
+          <div class="track-dot"></div>
+          <div class="track-content">
+            <span class="track-status">ESTUDANDO</span>
+            <h4>Red Team Ops & Pentest</h4>
+            <p>Reconhecimento, exploração e pós-exploração. Laboratórios locais e CTFs.</p>
+          </div>
+        </div>
+        <div class="track-item upcoming">
+          <div class="track-dot"></div>
+          <div class="track-content">
+            <span class="track-status">PRÓXIMO</span>
+            <h4>Certificação — Adicionar aqui</h4>
+            <p>Insira suas próximas metas de certificação: eJPT, CEH, OSCP ou outras.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="studies-stack">
+        <h3 class="stack-title">Recursos Ativos</h3>
+        <div class="resource-list">
+          <div class="resource-item">
+            <span class="resource-icon">📖</span>
+            <div>
+              <strong>Livros</strong>
+              <p>Hacking: The Art of Exploitation, The Web Application Hacker's Handbook</p>
             </div>
-        </section>
-
-        <section id="especialidades">
-            <h2>Minhas Especialidades</h2>
-            <div class="skills-grid">
-                <article class="skill-card card-neon">
-                    <i class="fas fa-shield-alt skill-icon neon-red"></i>
-                    <h3>Segurança Digital</h3>
-                    <p>Pentest ético, análise de vulnerabilidades, defesa de redes e criptografia base.</p>
-                </article>
-                <article class="skill-card card-neon">
-                    <i class="fas fa-code skill-icon neon-red"></i>
-                    <h3>Programação</h3>
-                    <p>Lógica de programação, algoritmos, HTML, CSS, JS, Python e C++ em estudo.</p>
-                </article>
-                <article class="skill-card card-neon">
-                    <i class="fas fa-microchip skill-icon neon-red"></i>
-                    <h3>IoT & Embarcados</h3>
-                    <p>Sistemas Embarcados com Arduino. A intersecção entre o código e o hardware.</p>
-                </article>
-                    </div>
-                </section>
-                
-        <section id="inspiracao" class="card-neon">
-            <h2>O que me inspira</h2>
-            <p>A capacidade de entender como os sistemas funcionam por baixo dos panos e o desafio constante de encontrar e corrigir vulnerabilidades. Mergulhar na tecnologia para resolver problemas é o que move a minha rotina de estudos.</p>
-        </section>
-        
-        <section id="contatos">
-            <h2>Vamos Conversar?</h2>
-            <p>Estou em constante aprendizado e aberto a oportunidades. Se você precisa de alguém para analisar vulnerabilidades ou programar, entre em contato!</p>
-            <div class="final-icons mono">
-                <a href="https://www.linkedin.com/in/kauãcardoso" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i> linkedin.com/in/kauãcardoso</a>
-                <a href="mailto:kcm2@cesar.school" target="_blank" title="E-mail"><i class="fas fa-envelope"></i> kcm2@cesar.school</a>
+          </div>
+          <div class="resource-item">
+            <span class="resource-icon">🎯</span>
+            <div>
+              <strong>Plataformas</strong>
+              <p>TryHackMe, HackTheBox, PicoCTF</p>
             </div>
-        </section>
-    </main>
+          </div>
+          <div class="resource-item">
+            <span class="resource-icon">🔬</span>
+            <div>
+              <strong>Lab</strong>
+              <p>VMs locais, Kali Linux, ambientes isolados para testes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; <span id="ano-atual"></span> Kauã Cardoso. Todos os direitos reservados. | Cibersegurança.</p>
-    </footer>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-name">Kauã Cardoso</span>
+      <div class="footer-links">
+        <a href="mailto:kcm2@cesar.school">kcm2@cesar.school</a>
+        <a href="https://linkedin.com/in/kauãcardoso" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <span class="footer-copy">© 2025 — Todos os direitos reservados.</span>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
