@@ -1,5 +1,6 @@
+// ── THEME TOGGLE ──────────────────────────────────────────
 const themeToggle = document.getElementById('themeToggle');
-const html = document.documentElement;
+const html        = document.documentElement;
 
 const applyIcon = (theme) => {
   themeToggle.textContent = theme === 'dark' ? '🌓' : '☀️';
@@ -14,6 +15,7 @@ themeToggle.addEventListener('click', () => {
   applyIcon(next);
 });
 
+// ── TYPEWRITER ────────────────────────────────────────────
 const phrases = [
   'Cybersecurity Student',
   'Red Team em Formação',
@@ -45,6 +47,7 @@ function typeLoop() {
 
 typeLoop();
 
+// ── SMOOTH SCROLL ─────────────────────────────────────────
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', e => {
     const href = link.getAttribute('href');
@@ -52,23 +55,27 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     e.preventDefault();
     const target = document.querySelector(href);
     if (target) {
-      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 64, behavior: 'smooth' });
+      window.scrollTo({
+        top: target.getBoundingClientRect().top + window.scrollY - 64,
+        behavior: 'smooth'
+      });
     }
   });
 });
 
+// ── SCROLL REVEAL ─────────────────────────────────────────
 const io = new IntersectionObserver((entries) => {
   entries.forEach(en => {
     if (en.isIntersecting) {
-      en.target.style.opacity = '1';
-      en.target.style.transform = 'translateY(0)';
+      en.target.style.opacity    = '1';
+      en.target.style.transform  = 'translateY(0)';
       io.unobserve(en.target);
     }
   });
 }, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll('.a-card, .proj-card, .track-row, .res-card').forEach((el, i) => {
-  el.style.opacity = '0';
+  el.style.opacity   = '0';
   el.style.transform = 'translateY(22px)';
   el.style.transition = `opacity .45s ease ${i * .055}s, transform .45s ease ${i * .055}s`;
   io.observe(el);
