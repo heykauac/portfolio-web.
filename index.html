@@ -3,63 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kauã | Cypher Coder</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lacquer&family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Kauã | Portfólio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
+        <div class="giant-logo">
+            <span class="kaua-text">KAUÃ</span> <span class="coder-text">CODER</span>
+        </div>
+        
         <nav class="menu">
-            <h1 class="logo lacquer-text">Kauã <span class="graffiti-vibe">Coder</span></h1>
             <ul>
-                <li><a href="index.html" class="ativo">Cypher</a></li>
-                <li><a href="projetos.html">Rimas de Código</a></li>
-                <li><a href="estudos.html">Estudo de Campo</a></li>
+                <li><a href="index.html" class="ativo">Home</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="estudos.html">Estudos</a></li>
             </ul>
             <button id="theme-toggle" title="Alternar Tema">🌓</button>
         </nav>
     </header>
 
     <main class="container">
-        <section id="apresentacao" class="card battle-round">
-            <div class="mic-icon lacquer-text">&#x1F3A4;</div>
-            <h2>O Mic é Meu: Saudações, eu sou o <span class="neon-red">Kauã</span>.</h2>
-            <p>Estudante do 1º período de Tecnologia, focado em Cibersegurança. Construindo a base de desenvolvimento para entender sistemas e vulnerabilidades por baixo dos panos. Cada commit é uma rima, cada vulnerabilidade um oponente.</p>
-        </section>
+        <section id="hero">
+            <div class="hero-content">
+                <img src="https://github.com/heykauac.png" alt="Kauã" id="hero-photo" class="neon-glow" />
+                <div class="hero-text">
+                    <h1>Saudações, eu sou o <span class="neon-red">Kauã</span>.</h1>
+                    <p class="typing-subtitle">Eu sou <span id="typing-sub-js" class="mono"></span></p>
+                    <p class="hero-intro">Estudante do 1º período de Tecnologia, focado em Cibersegurança. Construindo a base de desenvolvimento para entender sistemas e vulnerabilidades por baixo dos panos.</p>
+                    
+                    <div class="hero-icons mono">
+                        <a href="https://www.linkedin.com/in/kauãcardoso" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:kcm2@cesar.school" target="_blank" title="E-mail"><i class="fas fa-envelope"></i></a>
+                    </div>
 
-        <section id="combustivel" class="card coffee-round">
-            <div class="coffee-layout">
-                <div class="coffee-cup-visual">
-                    <img src="https://github.com/heykauac.png" alt="Foto de Perfil de Kauã" id="pfp" />
-                    <div class="coffee-tag fira-mono-text">Fueling the Cypher</div>
-                </div>
-                <div class="coffee-info">
-                    <p>Meu foco principal é a área de Segurança da Informação e Pentest. Para construir uma base sólida, também estudo desenvolvimento web (HTML, CSS, JS), linguagens robustas (Python, C, C++) e sistemas embarcados com Arduino.</p>
-                    <p class="email fira-mono-text">E-mail: <a href="mailto:kcm2@cesar.school">kcm2@cesar.school</a></p>
+                    <a href="#contatos" class="btn-neon">Meus Contatos</a>
                 </div>
             </div>
         </section>
 
-        <section id="inspiracao" class="card battle-round">
-            <div class="inspira-content">
-                <div class="player-visual card card-neon-light">
-                    <h3 class="lacquer-text player-title">A batida que move o código</h3>
-                    <p class="track fira-mono-text">Jotape - Cypher Hacker</p>
-                    <div class="player-controls">
-                        <span>&#x23EE;</span>
-                        <span>&#x23F5;</span>
-                        <span>&#x23ED;</span>
-                    </div>
-                </div>
-                <p>A capacidade de entender como os sistemas funcionam por baixo dos panos e o desafio constante de encontrar e corrigir vulnerabilidades. Além disso, um bom café quente e uma batida de rap são minhas maiores inspirações no dia a dia de estudos. </p>
+        <section id="especialidades">
+            <h2>Minhas Especialidades</h2>
+            <div class="skills-grid">
+                <article class="skill-card card-neon">
+                    <i class="fas fa-shield-alt skill-icon neon-red"></i>
+                    <h3>Segurança Digital</h3>
+                    <p>Pentest ético, análise de vulnerabilidades, defesa de redes e criptografia base.</p>
+                </article>
+                <article class="skill-card card-neon">
+                    <i class="fas fa-code skill-icon neon-red"></i>
+                    <h3>Programação</h3>
+                    <p>Lógica de programação, algoritmos, HTML, CSS, JS, Python e C++ em estudo.</p>
+                </article>
+                <article class="skill-card card-neon">
+                    <i class="fas fa-microchip skill-icon neon-red"></i>
+                    <h3>IoT & Embarcados</h3>
+                    <p>Sistemas Embarcados com Arduino. A intersecção entre o código e o hardware.</p>
+                </article>
+            </div>
+        </section>
+        
+        <section id="inspiracao" class="card-neon">
+            <h2>O que me inspira</h2>
+            <p>A capacidade de entender como os sistemas funcionam por baixo dos panos e o desafio constante de encontrar e corrigir vulnerabilidades. Mergulhar na tecnologia para resolver problemas é o que move a minha rotina de estudos.</p>
+        </section>
+        
+        <section id="contatos">
+            <h2>Vamos Conversar?</h2>
+            <p>Estou em constante aprendizado e aberto a oportunidades. Se você precisa de alguém para analisar vulnerabilidades ou programar, entre em contato!</p>
+            <div class="final-icons mono">
+                <a href="https://www.linkedin.com/in/kauãcardoso" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i> linkedin.com/in/kauãcardoso</a>
+                <a href="mailto:kcm2@cesar.school" target="_blank" title="E-mail"><i class="fas fa-envelope"></i> kcm2@cesar.school</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="ano-atual"></span> Kauã Cardoso. Todos os direitos reservados. | Estilo Cypher Coder.</p>
+        <p>&copy; <span id="ano-atual"></span> Kauã Cardoso. Todos os direitos reservados. | Cibersegurança.</p>
     </footer>
 
     <script src="script.js"></script>
