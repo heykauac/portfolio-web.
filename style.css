@@ -538,6 +538,51 @@ a { text-decoration: none; color: inherit; }
 
 .projetos-section { background: var(--bg); }
 
+.section-banner {
+  margin-top: 2rem;
+  position: relative;
+  max-width: 720px;
+  transform: rotate(-0.8deg);
+}
+
+.section-banner::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px solid var(--gold);
+  box-shadow: var(--gold-glow);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.section-banner-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  border-left: 5px solid var(--gold);
+  filter: grayscale(15%) contrast(1.05);
+  position: relative;
+  z-index: 1;
+}
+
+.section-banner-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.6rem 1rem;
+  background: rgba(0, 0, 0, 0.75);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--gold);
+  text-shadow: var(--gold-glow);
+  letter-spacing: 0.08em;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+}
+
 .projetos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
