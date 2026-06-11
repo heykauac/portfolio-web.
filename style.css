@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap');
 
+/* ── TOKENS ───────────────────────────────────────────── */
 :root {
   --bg:       #141414;
   --bg2:      #1c1c1c;
@@ -28,6 +29,7 @@
   --hbg:      rgba(242,240,232,0.92);
 }
 
+/* ── RESET ────────────────────────────────────────────── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior: smooth; }
 
@@ -42,12 +44,14 @@ body {
 
 a { color: inherit; text-decoration: none; }
 
+/* ── NAV ──────────────────────────────────────────────── */
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 200;
   background: var(--hbg);
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -95,6 +99,7 @@ a { color: inherit; text-decoration: none; }
 
 .theme-btn:hover { border-color: var(--gold); transform: scale(1.06); }
 
+/* ── HERO ─────────────────────────────────────────────── */
 .hero {
   position: relative;
   min-height: 100svh;
@@ -209,6 +214,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 1.75rem;
 }
 
+/* ── BUTTONS ──────────────────────────────────────────── */
 .btn-fill {
   font-family: 'Space Mono', monospace;
   font-size: .78rem;
@@ -238,6 +244,7 @@ a { color: inherit; text-decoration: none; }
 .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
 .btn-outline.sm { padding: .45rem 1rem; font-size: .72rem; }
 
+/* ── STACK PILLS ──────────────────────────────────────── */
 .stack-pills {
   display: flex;
   flex-wrap: wrap;
@@ -256,6 +263,7 @@ a { color: inherit; text-decoration: none; }
 
 .pill.gold { border-color: var(--gold); color: var(--gold); }
 
+/* ── HERO RIGHT ───────────────────────────────────────── */
 .hero-right {
   position: relative;
   display: flex;
@@ -339,6 +347,7 @@ a { color: inherit; text-decoration: none; }
 
 @keyframes bounce { to { transform: translateY(5px); } }
 
+/* ── MARQUEE BAND ─────────────────────────────────────── */
 .about-band {
   background: var(--gold);
   overflow: hidden;
@@ -357,6 +366,7 @@ a { color: inherit; text-decoration: none; }
 
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
+/* ── SECTIONS SHARED ──────────────────────────────────── */
 .arsenal-section,
 .projects-section,
 .studies-section {
@@ -383,6 +393,7 @@ a { color: inherit; text-decoration: none; }
   background: var(--border);
 }
 
+/* ── ARSENAL ──────────────────────────────────────────── */
 .arsenal-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -400,7 +411,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 .a-card:hover { background: var(--bg3); }
-
 .a-card.accent { border-top: 2px solid var(--gold); }
 
 .a-num {
@@ -443,6 +453,7 @@ a { color: inherit; text-decoration: none; }
 
 @keyframes grow { from { width:0; } to { width: var(--w); } }
 
+/* ── PROJECTS ─────────────────────────────────────────── */
 .sec-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2.8rem, 6vw, 4.5rem);
@@ -550,6 +561,7 @@ a { color: inherit; text-decoration: none; }
   flex-wrap: wrap;
 }
 
+/* ── STUDIES ──────────────────────────────────────────── */
 .studies-inner {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -600,7 +612,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: .3rem;
 }
 
-.track-status.red { color: var(--red); }
+.track-status.red  { color: var(--red); }
 .track-status.gold { color: var(--gold); }
 
 .track-title {
@@ -634,10 +646,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 .res-list { display: flex; flex-direction: column; gap: 1.1rem; }
-
 .res-item { display: flex; gap: .9rem; align-items: flex-start; }
-
-.res-ico { font-size: 1.1rem; flex-shrink: 0; margin-top: .1rem; }
+.res-ico  { font-size: 1.1rem; flex-shrink: 0; margin-top: .1rem; }
 
 .res-item strong {
   display: block;
@@ -664,6 +674,7 @@ a { color: inherit; text-decoration: none; }
   padding-left: .2rem;
 }
 
+/* ── FOOTER ───────────────────────────────────────────── */
 .site-footer {
   border-top: 1px solid var(--border);
   margin-top: 2rem;
@@ -704,35 +715,39 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted);
 }
 
+/* ── RESPONSIVE ───────────────────────────────────────── */
 @media (max-width: 1100px) {
   .arsenal-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
-  .hero-right { order: -1; }
-  .hero-btns { justify-content: center; }
-  .stack-pills { justify-content: center; }
-  .hero-bio { margin: 0 auto 2rem; }
-  .proj-grid { grid-template-columns: 1fr; }
-  .proj-card.feat { grid-template-columns: 1fr; }
-  .studies-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-inner         { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+  .hero-right         { order: -1; }
+  .hero-btns          { justify-content: center; }
+  .stack-pills        { justify-content: center; }
+  .hero-bio           { margin: 0 auto 2rem; }
+  .proj-grid          { grid-template-columns: 1fr; }
+  .proj-card.feat     { grid-template-columns: 1fr; }
+  .studies-inner      { grid-template-columns: 1fr; gap: 2.5rem; }
   .hero-bg-title span { font-size: clamp(5rem, 20vw, 10rem); }
 }
 
 @media (max-width: 640px) {
-  .nav { padding: 0 1.25rem; }
-  .nav-links { gap: 1.4rem; }
-  .nav-links a { font-size: .65rem; }
-  .hero-inner { padding: 2rem 1.25rem; }
-  .arsenal-section, .projects-section, .studies-section { padding: 3rem 1.25rem; }
-  .arsenal-grid { grid-template-columns: 1fr 1fr; }
-  .footer-inner { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.25rem; }
+  .nav                { padding: 0 1.25rem; }
+  .nav-links          { gap: 1.4rem; }
+  .nav-links a        { font-size: .65rem; }
+  .hero-inner         { padding: 2rem 1.25rem; }
+  .arsenal-section,
+  .projects-section,
+  .studies-section    { padding: 3rem 1.25rem; }
+  .arsenal-grid       { grid-template-columns: 1fr 1fr; }
+  .footer-inner       { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.25rem; }
 }
 
+/* ── REDUCED MOTION ───────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  .a-fill { animation: none; width: var(--w); }
-  .deco-star { animation: none; }
-  .band-text { animation: none; }
-  .scroll-label { animation: none; }
+  .a-fill        { animation: none; width: var(--w); }
+  .deco-star     { animation: none; }
+  .band-text     { animation: none; }
+  .scroll-label  { animation: none; }
 }
