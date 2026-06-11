@@ -4,39 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kauã | Portfólio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav class="menu">
             <ul>
-                <li><a href="index.html" class="ativo">Sobre Mim</a></li>
+                <li><a href="index.html" class="ativo">Home</a></li>
                 <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="estudos.html">Estudos</a></li>
             </ul>
-            <button id="theme-toggle">Alternar Tema 🌓</button>
+            <button id="theme-toggle" title="Alternar Tema">🌓</button>
         </nav>
     </header>
 
     <main class="container">
-        <section id="sobre">
-            <h1>Olá, eu sou o Kauã</h1>
-            <p>Estudante do 1º período de Tecnologia, apaixonado por Cibersegurança, desenvolvimento de software e música.</p>
+        <section id="hero">
+            <div class="hero-content">
+                <img src="https://github.com/heykauac.png" alt="Foto de Perfil de Kauã" id="hero-photo" class="neon-glow" />
+                <div class="hero-text">
+                    <h1>Saudações, eu sou o <span class="neon-green">Kauã</span>.</h1>
+                    <p class="typing-subtitle">Eu sou <span id="typing-sub-js" class="mono"></span></p>
+                    <p class="hero-intro">Estudante do 1º período de Tecnologia, focado em Cibersegurança. Construindo a base de desenvolvimento para entender sistemas e vulnerabilidades por baixo dos panos.</p>
+                    
+                    <div class="hero-icons mono">
+                        <a href="https://www.linkedin.com/in/kauãcardoso" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:seu.email@provedor.com" target="_blank" title="E-mail"><i class="fas fa-envelope"></i></a>
+                    </div>
+
+                    <a href="#contatos" class="btn-neon">Meus Contatos</a>
+                </div>
+            </div>
         </section>
 
-        <section id="interesses">
-            <h2>Meus Interesses Profissionais</h2>
-            <p>Meu foco principal é a área de <strong>Segurança da Informação e Pentest</strong>. Para construir uma base sólida, também estudo desenvolvimento web (HTML, CSS, JS), linguagens robustas (Python, C, C++) e sistemas embarcados com Arduino.</p>
+        <section id="especialidades">
+            <h2>Minhas Especialidades</h2>
+            <div class="skills-grid">
+                <article class="skill-card card-neon">
+                    <i class="fas fa-shield-alt skill-icon neon-green"></i> <h3>Segurança Digital</h3>
+                    <p>Pentest ético, análise de vulnerabilidades, defesa de redes e criptografia base.</p>
+                </article>
+                <article class="skill-card card-neon">
+                    <i class="fas fa-code skill-icon neon-green"></i> <h3>Programação</h3>
+                    <p>Lógica de programação, algoritmos, HTML, CSS, JS, Python e C++ em estudo.</p>
+                </article>
+                <article class="skill-card card-neon">
+                    <i class="fas fa-microchip skill-icon neon-green"></i> <h3>IoT & Embarcados</h3>
+                    <p>Sistemas Embarcados com Arduino. A intersecção entre o código e o hardware.</p>
+                </article>
+            </div>
         </section>
-
-        <section id="inspiracao">
-            <h2>O que me inspira?</h2>
-            <p>A capacidade de entender como os sistemas funcionam por baixo dos panos e o desafio constante de encontrar e corrigir vulnerabilidades. Além disso, um bom café e uma batida de rap são minhas maiores inspirações no dia a dia de estudos.</p>
+        
+        <section id="inspiracao" class="card-neon">
+            <h2>A batida constante</h2>
+            <p>Mergulhado no mundo da segurança digital e lógica de programação. Minha missão é construir um arsenal de habilidades para atuar na linha de frente da defesa cibernética.</p>
+            <p>O desafio de desvendar sistemas, entender como eles funcionam e um bom café quente são as minhas maiores inspirações no dia a dia de estudos.</p>
+        </section>
+        
+        <section id="contatos">
+            <h2>Vamos Conversar?</h2>
+            <p>Estou em constante aprendizado e aberto a oportunidades de estágio e projetos. Se você precisa de alguém para analisar vulnerabilidades ou programar um embarcado, entre em contato!</p>
+            <div class="final-icons mono">
+                <a href="https://www.linkedin.com/in/kauãcardoso" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i> linkedin.com/in/kauãcardoso</a>
+                <a href="mailto:seu.email@provedor.com" target="_blank" title="E-mail"><i class="fas fa-envelope"></i> seu.email@provedor.com</a>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="ano-atual"></span> Kauã. Todos os direitos reservados.</p>
+        <p>&copy; <span id="ano-atual"></span> Kauã Cardoso. Todos os direitos reservados. | Estilo Matrix-Modern.</p>
     </footer>
 
     <script src="script.js"></script>
