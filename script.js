@@ -1,143 +1,75 @@
-(function () {
-  const root = document.documentElement;
-  const themeBtn = document.getElementById('themeToggle');
-  const STORAGE_KEY = 'kc-theme';
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
 
-  function applyTheme(theme) {
-    root.setAttribute('data-theme', theme);
-    localStorage.setItem(STORAGE_KEY, theme);
+const applyIcon = (theme) => {
+  themeToggle.textContent = theme === 'dark' ? '🌓' : '☀️';
+};
+
+applyIcon(html.getAttribute('data-theme'));
+
+themeToggle.addEventListener('click', () => {
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  applyIcon(next);
+});
+
+const phrases = [
+  'Cybersecurity Student',
+  'Red Team em Formação',
+  'Pentest Ético',
+  'Python & C++',
+  'Exploits & Vulnerabilidades',
+  'IoT & Hardware Hacking',
+];
+
+let pIdx = 0, cIdx = 0, deleting = false;
+const tw = document.getElementById('typewriter');
+
+function typeLoop() {
+  const cur = phrases[pIdx];
+  tw.textContent = deleting ? cur.slice(0, cIdx - 1) : cur.slice(0, cIdx + 1);
+  deleting ? cIdx-- : cIdx++;
+
+  if (!deleting && cIdx === cur.length) {
+    deleting = true;
+    setTimeout(typeLoop, 1900);
+    return;
   }
-
-  const savedTheme = localStorage.getItem(STORAGE_KEY) || 'dark';
-  applyTheme(savedTheme);
-
-  themeBtn.addEventListener('click', () => {
-    const current = root.getAttribute('data-theme');
-    applyTheme(current === 'dark' ? 'light' : 'dark');
-  });
-
-  const roles = [
-    'Estudante de Tecnologia',
-    'Cybersec Enthusiast',
-    'Python Developer',
-    'Web App Security',
-    'Future Hacker Ético',
-  ];
-
-  let roleIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  const typedEl = document.getElementById('typedText');
-  const TYPING_SPEED = 80;
-  const DELETING_SPEED = 40;
-  const PAUSE_END = 2200;
-  const PAUSE_START = 400;
-
-  function type() {
-    const current = roles[roleIndex];
-    if (isDeleting) {
-      typedEl.textContent = current.slice(0, charIndex - 1);
-      charIndex--;
-    } else {
-      typedEl.textContent = current.slice(0, charIndex + 1);
-      charIndex++;
-    }
-
-    let delay = isDeleting ? DELETING_SPEED : TYPING_SPEED;
-
-    if (!isDeleting && charIndex === current.length) {
-      delay = PAUSE_END;
-      isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      roleIndex = (roleIndex + 1) % roles.length;
-      delay = PAUSE_START;
-    }
-
-    setTimeout(type, delay);
+  if (deleting && cIdx === 0) {
+    deleting = false;
+    pIdx = (pIdx + 1) % phrases.length;
   }
+  setTimeout(typeLoop, deleting ? 48 : 88);
+}
 
-  type();
+typeLoop();
 
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('.section');
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          navLinks.forEach((link) => {
-            link.classList.toggle('active', link.dataset.section === id);
-          });
-        }
-      });
-    },
-    { rootMargin: `-${64 / 2}px 0px -50% 0px`, threshold: 0 }
-  );
-
-  sections.forEach((section) => observer.observe(section));
-
-  navLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = document.getElementById(link.dataset.section);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', e => {
+    const href = link.getAttribute('href');
+    if (!href.startsWith('#')) return;
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 64, behavior: 'smooth' });
+    }
   });
+});
 
-  const areaBlocks = document.querySelectorAll('.area-block');
-  areaBlocks.forEach((block) => {
-    block.addEventListener('click', () => {
-      areaBlocks.forEach((b) => b.classList.remove('active'));
-      block.classList.add('active');
-    });
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      en.target.style.opacity = '1';
+      en.target.style.transform = 'translateY(0)';
+      io.unobserve(en.target);
+    }
   });
+}, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
 
-  const progressBars = document.querySelectorAll('.progress-bar');
-  const progressObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.setProperty('--fill', entry.target.style.getPropertyValue('--fill'));
-          progressObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
-
-  progressBars.forEach((bar) => {
-    const fill = bar.style.getPropertyValue('--fill');
-    bar.style.setProperty('--fill', '0%');
-    progressObserver.observe(bar);
-    setTimeout(() => {
-      bar.style.setProperty('--fill', fill);
-    }, 200);
-  });
-
-  const cards = document.querySelectorAll('.projeto-card');
-  const cardObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = entry.target.classList.contains('featured')
-            ? 'translateY(0)'
-            : 'translateY(0)';
-          cardObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-
-  cards.forEach((card, i) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(24px)';
-    card.style.transition = `opacity 0.5s ease ${i * 0.1}s, transform 0.5s ease ${i * 0.1}s, border-color 0.25s`;
-    cardObserver.observe(card);
-  });
-})();
+document.querySelectorAll('.a-card, .proj-card, .track-row, .res-card').forEach((el, i) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(22px)';
+  el.style.transition = `opacity .45s ease ${i * .055}s, transform .45s ease ${i * .055}s`;
+  io.observe(el);
+});
